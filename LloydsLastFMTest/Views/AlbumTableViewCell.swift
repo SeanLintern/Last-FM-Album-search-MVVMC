@@ -46,6 +46,17 @@ class AlbumTableViewCell: UITableViewCell {
         return imageView
     }()
     
+    private var imageResource: ImageResource? {
+        didSet {
+            if let old = oldValue {
+                ImageLoader.shared.cancelRequest(resource: old)
+            }
+            if let resource = imageResource {
+                displayImage.loadImage(resource: resource)
+            }
+        }
+    }
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         commonInit()
@@ -85,8 +96,6 @@ class AlbumTableViewCell: UITableViewCell {
         
         subtitleLabel.isHidden = subtitle == nil
         
-        if let resource = imageResource {
-            displayImage.loadImage(resource: resource)
-        }
+        self.imageResource = imageResource
     }
 }

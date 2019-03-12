@@ -13,7 +13,7 @@ private typealias ImageResourceLoadingComplete = ((_ image: UIImage?, _ resource
 
 private class ImageLoadingRequestOperation: Operation {
     
-    private var resource: ImageResource
+    var resource: ImageResource
     private var session: URLSession
     private var completion: ImageResourceLoadingComplete?
 
@@ -98,6 +98,14 @@ class ImageLoader {
         })
         requestStore[resource.identifier] = [completion]
         requestQueue.addOperation(newRequest)
+    }
+    
+    func cancelRequest(resource: ImageResource) {
+        requestQueue.operations.forEach({
+            if let op = $0 as? ImageLoadingRequestOperation, op.resource.identifier == resource.identifier {
+                $0.cancel()
+            }
+        })
     }
     
     private func requestCompleted(image: UIImage?, resource: ImageResource) {

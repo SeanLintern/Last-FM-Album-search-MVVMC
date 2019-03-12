@@ -21,7 +21,8 @@ class AlbumDetailsCoordinator: Coordinator {
         controller.loadingStateUpdated(newState: .loading)
         
         LastFMAPI.fetchAlbumDetails(mbid: album.mbid, success: { (result) in
-            
+            controller.loadingStateUpdated(newState: .loadingComplete)
+            controller.updateUI(viewModel: AlbumDetailsViewModel(album: result))
         }) {
             
         }

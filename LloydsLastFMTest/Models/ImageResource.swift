@@ -18,6 +18,6 @@ extension LastFMImage: ImageResource {
     }
     
     var identifier: String {
-        return resourceURL.lastPathComponent
+        return resourceURL.path
     }
 }

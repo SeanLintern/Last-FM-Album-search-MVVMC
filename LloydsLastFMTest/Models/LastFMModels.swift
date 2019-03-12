@@ -57,7 +57,7 @@ struct LastFMAlbumDetails: Codable {
     let playcount: String
     let tracks: LastFMTrackDetails
     let tags: LastFMTagDetails
-    let wiki: LastFMWikiDetails
+    let wiki: LastFMWikiDetails?
 }
 
 struct LastFMTrackDetails: Codable {

@@ -16,26 +16,25 @@ class AlbumDetailsViewController: UIViewController {
         return loader
     }()
     
-    private lazy var verticalTextStackLayout: UIStackView = {
+    private lazy var scrollContainer: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    private lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.showsVerticalScrollIndicator = false
+        return scroll
+    }()
+    
+    private lazy var verticalStackLayout: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.distribution = .fill
         stack.spacing = 16
         return stack
-    }()
-    
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private lazy var subtitleLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
     }()
     
     private lazy var displayImage: UIImageView = {
@@ -68,37 +67,75 @@ class AlbumDetailsViewController: UIViewController {
         }
     }
     
-    private func updateUI(viewModel: AlbumDetailsViewModel) {
+    func updateUI(viewModel: AlbumDetailsViewModel) {
         navigationItem.title = viewModel.title.string
         
-        view.addSubview(verticalTextStackLayout)
-        verticalTextStackLayout.snp.makeConstraints { (make) in
-            make.top.equalTo(view.snp.topMargin).inset(32)
-            make.bottom.lessThanOrEqualToSuperview().inset(32)
+        scrollView.contentInset = UIEdgeInsets(top: 32, left: 0, bottom: 32, right: 0)
+        
+        view.addSubview(scrollContainer)
+        scrollContainer.snp.makeConstraints { (make) in
+            make.top.equalTo(view.snp.topMargin)
+            make.bottom.lessThanOrEqualToSuperview()
             make.width.equalToSuperview().inset(32)
             make.centerX.equalToSuperview()
         }
         
-        verticalTextStackLayout.addArrangedSubview(displayImage)
-        displayImage.snp.makeConstraints { (make) in
-            make.width.equalToSuperview()
-            make.height.equalTo(verticalTextStackLayout.snp.width)
+        scrollContainer.addSubview(scrollView)
+        scrollView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
         }
         
-        let textStack = UIStackView()
-        textStack.spacing = 4
-        textStack.axis = .vertical
-        textStack.addArrangedSubview(titleLabel)
-        textStack.addArrangedSubview(subtitleLabel)
+        scrollView.addSubview(verticalStackLayout)
+        verticalStackLayout.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+            make.width.equalTo(scrollContainer)
+        }
         
-        verticalTextStackLayout.addArrangedSubview(textStack)
-        
-        titleLabel.attributedText = viewModel.title
-        subtitleLabel.attributedText = viewModel.subtitle
+        verticalStackLayout.addArrangedSubview(displayImage)
+        displayImage.snp.makeConstraints { (make) in
+            make.width.equalToSuperview()
+            make.height.equalTo(verticalStackLayout.snp.width)
+        }
         
         if let image = viewModel.image {
             displayImage.loadImage(resource: image)
         }
+        displayImage.isHidden = viewModel.image == nil
+
+        verticalStackLayout.addArrangedSubview(verticalTextStackGenerator(spacing: 0, title: viewModel.detailsHeader, subtitle: nil))
+        verticalStackLayout.addArrangedSubview(verticalTextStackGenerator(spacing: 4, title: viewModel.title, subtitle: viewModel.subtitle))
+        
+        if let wiki = viewModel.wikiText {
+            verticalStackLayout.addArrangedSubview(verticalTextStackGenerator(spacing: 0, title: wiki, subtitle: nil))
+        }
+        
+        verticalStackLayout.addArrangedSubview(verticalTextStackGenerator(spacing: 0, title: viewModel.trackHeader, subtitle: nil))
+
+        for i in 0..<viewModel.trackCount {
+            verticalStackLayout.addArrangedSubview(verticalTextStackGenerator(spacing: 0, title: viewModel.trackTitle(at: i), subtitle: viewModel.trackSubtitle(at: i)))
+        }
+    }
+    
+    private func verticalTextStackGenerator(spacing: CGFloat, title: NSAttributedString, subtitle: NSAttributedString?) -> UIStackView {
+        let stack = UIStackView()
+        stack.spacing = spacing
+        stack.axis = .vertical
+        
+        let titleLabel = UILabel()
+        titleLabel.numberOfLines = 0
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.attributedText = title
+        stack.addArrangedSubview(titleLabel)
+
+        if let subtitle = subtitle {
+            let subtitleLabel = UILabel()
+            subtitleLabel.numberOfLines = 0
+            subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+            subtitleLabel.attributedText = subtitle
+            stack.addArrangedSubview(subtitleLabel)
+        }
+
+        return stack
     }
 }
 

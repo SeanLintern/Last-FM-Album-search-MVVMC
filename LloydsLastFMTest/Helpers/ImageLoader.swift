@@ -56,6 +56,7 @@ private class ImageLoadingRequestOperation: Operation {
         
         guard let imageData = data else {
             completion?(nil, resource)
+            completed = true
             return
         }
         

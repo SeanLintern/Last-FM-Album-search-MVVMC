@@ -23,8 +23,17 @@ class AlbumDetailsCoordinator: Coordinator {
         LastFMAPI.fetchAlbumDetails(mbid: album.mbid, success: { (result) in
             controller.loadingStateUpdated(newState: .loadingComplete)
             controller.updateUI(viewModel: AlbumDetailsViewModel(album: result))
-        }) {
-            
+        }) { [weak self] in
+            self?.showErrorAndPop()
         }
+    }
+    
+    private func showErrorAndPop() {
+        let alert = UIAlertController(title: nil, message: "An unexpected error occured, please try again soon.", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { [weak self] (_) in
+            self?.navigationController.popViewController(animated: true)
+        }
+        alert.addAction(ok)
+        navigationController.present(alert, animated: true, completion: nil)
     }
 }

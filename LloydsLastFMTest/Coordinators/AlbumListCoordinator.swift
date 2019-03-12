@@ -6,7 +6,7 @@
 //  Copyright © 2019 Sean Lintern LTD. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class AlbumListCoordinator: Coordinator {
     
@@ -21,9 +21,17 @@ class AlbumListCoordinator: Coordinator {
         LastFMAPI.fetchAlbums(searchTerm: searchTerm, success: { result in
             controller.loadingStateUpdated(newState: .loadingComplete)
             controller.update(viewModel: AlbumListViewModel(searchResult: result))
-        }) {
+        }) { [weak self] in
             controller.loadingStateUpdated(newState: .loadingComplete)
+            self?.showError()
         }
+    }
+    
+    private func showError() {
+        let alert = UIAlertController(title: nil, message: "An unexpected error occured, please try again soon.", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        navigationController.present(alert, animated: true, completion: nil)
     }
 }
 

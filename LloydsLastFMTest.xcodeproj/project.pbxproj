@@ -11,6 +11,7 @@
 		7D4D1FCB2237CE2D0026F44E /* AlbumListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FCA2237CE2D0026F44E /* AlbumListCoordinator.swift */; };
 		7D4D1FD02237CF400026F44E /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FCF2237CF400026F44E /* AlbumListViewController.swift */; };
 		7D4D1FD32237D17B0026F44E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4D1FD22237D17B0026F44E /* SnapKit.framework */; };
+		7D4D1FD72237D48C0026F44E /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FD62237D48C0026F44E /* LoadingStateView.swift */; };
 		7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456BA2237CA1600239A8A /* AppDelegate.swift */; };
 		7DD456C22237CA1800239A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C12237CA1800239A8A /* Assets.xcassets */; };
 		7DD456C52237CA1800239A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C32237CA1800239A8A /* LaunchScreen.storyboard */; };
@@ -32,6 +33,7 @@
 		7D4D1FCA2237CE2D0026F44E /* AlbumListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListCoordinator.swift; sourceTree = "<group>"; };
 		7D4D1FCF2237CF400026F44E /* AlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
 		7D4D1FD22237D17B0026F44E /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
+		7D4D1FD62237D48C0026F44E /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
 		7DD456B72237CA1600239A8A /* LloydsLastFMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LloydsLastFMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD456BA2237CA1600239A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DD456C12237CA1800239A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		7D4D1FD52237D47A0026F44E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7D4D1FD62237D48C0026F44E /* LoadingStateView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		7DD456AE2237CA1600239A8A = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		7DD456B92237CA1600239A8A /* LloydsLastFMTest */ = {
 			isa = PBXGroup;
 			children = (
+				7D4D1FD52237D47A0026F44E /* Helpers */,
 				7DD456DF2237CB8300239A8A /* Coordinators */,
 				7D4D1FCC2237CF080026F44E /* ViewControllers */,
 				7D4D1FCF2237CF400026F44E /* AlbumListViewController.swift */,
@@ -280,6 +291,7 @@
 				7D4D1FC92237CC570026F44E /* AppCoordinator.swift in Sources */,
 				7DD456DC2237CA7200239A8A /* Coordinator.swift in Sources */,
 				7D4D1FCB2237CE2D0026F44E /* AlbumListCoordinator.swift in Sources */,
+				7D4D1FD72237D48C0026F44E /* LoadingStateView.swift in Sources */,
 				7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */,
 				7D4D1FD02237CF400026F44E /* AlbumListViewController.swift in Sources */,
 			);

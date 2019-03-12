@@ -17,7 +17,7 @@ class AlbumListCoordinator: Coordinator {
     }
     
     private func fetchAlbumList(controller: AlbumListViewController) {
-        
+        controller.loadingStateUpdated(newState: .loading)
     }
 }
 

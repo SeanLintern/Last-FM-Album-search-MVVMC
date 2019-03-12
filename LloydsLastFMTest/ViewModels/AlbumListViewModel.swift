@@ -13,7 +13,7 @@ struct AlbumListViewModel {
     private static let titleAttributes: [String: Any] = [NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium), NSKernAttributeName: 1.5, NSForegroundColorAttributeName: UIColor.black]
     private static let subtitleAttributes: [String: Any] = [NSFontAttributeName: UIFont.systemFont(ofSize: 12, weight: UIFontWeightMedium), NSKernAttributeName: 1, NSForegroundColorAttributeName: UIColor.darkGray]
 
-    private var searchResult: LastFMAlbumSearchResult
+    var searchResult: LastFMAlbumSearchResult
     
     var numberOfItems: Int {
         return searchResult.albummatches.albums.count

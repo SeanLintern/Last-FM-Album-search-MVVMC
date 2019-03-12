@@ -50,7 +50,7 @@ struct AlbumDetailsViewModel {
         return tracks.count
     }
 
-    private var album: LastFMAlbumDetails
+    var album: LastFMAlbumDetails
     
     init(album: LastFMAlbumDetails) {
         self.album = album

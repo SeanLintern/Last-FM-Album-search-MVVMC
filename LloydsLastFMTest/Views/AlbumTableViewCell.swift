@@ -68,6 +68,10 @@ class AlbumTableViewCell: UITableViewCell {
     }
     
     private func commonInit() {
+        separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        accessoryType = .disclosureIndicator
+        
         contentView.addSubview(horizontalStackLayout)
         horizontalStackLayout.snp.makeConstraints { (make) in
             make.edges.equalToSuperview().inset(8)

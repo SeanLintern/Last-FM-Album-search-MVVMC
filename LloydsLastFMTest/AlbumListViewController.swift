@@ -66,6 +66,14 @@ class AlbumListViewController: UIViewController {
         tableView.tableFooterView = loadingSpinner
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let selected = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selected, animated: true)
+        }
+    }
+    
     func update(viewModel: AlbumListViewModel) {
         self.viewModel = viewModel
     }

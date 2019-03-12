@@ -43,6 +43,8 @@ class AlbumTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .lightGray
+        imageView.layer.cornerRadius = 4
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     

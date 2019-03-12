@@ -13,6 +13,8 @@ enum LastFMImageSize: String, Codable {
     case medium
     case large
     case extralarge
+    case mega
+    case unknown = ""
 }
 
 struct LastFMImage: Codable {
@@ -43,4 +45,42 @@ struct LastFMAlbumMatches: Codable {
         case albums = "album"
     }
     let albums: [LastFMAlbum]
+}
+
+struct LastFMAlbumDetails: Codable {
+    let name: String
+    let artist: String
+    let url: URL
+    let image: [LastFMImage]
+    let mbid: String
+    let listeners: String
+    let playcount: String
+    let tracks: LastFMTrackDetails
+    let tags: LastFMTagDetails
+    let wiki: LastFMWikiDetails
+}
+
+struct LastFMTrackDetails: Codable {
+    let track: [LastFMTrack]
+}
+
+struct LastFMTrack: Codable {
+    let name: String
+    let url: URL
+    let duration: String
+}
+
+struct LastFMTagDetails: Codable {
+    let tag: [LastFMTag]
+}
+
+struct LastFMTag: Codable {
+    let name: String
+    let url: URL
+}
+
+struct LastFMWikiDetails: Codable {
+    let published: String
+    let summary: String
+    let content: String
 }

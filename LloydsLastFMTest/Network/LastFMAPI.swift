@@ -9,7 +9,7 @@
 import UIKit
 
 typealias LastFMAlbumSearchSuccess = ((_ result: LastFMAlbumSearchResult) -> Void)
-typealias LastFMAlbumDetailsSuccess = ((_ result: LastFMAlbumSearchResult) -> Void)
+typealias LastFMAlbumDetailsSuccess = ((_ result: LastFMAlbumDetails) -> Void)
 
 typealias LastFMAlbumSearchFailure = (() -> Void)
 
@@ -76,7 +76,16 @@ struct LastFMAPI {
         NetworkManager.performRequest(request: request, success: { (data, response) in
             if let data = data {
                 do {
-                    print(try JSONSerialization.jsonObject(with: data, options: .allowFragments))
+                    let decoder = JSONDecoder()
+                    
+                    let result = try decoder.decode([String: LastFMAlbumDetails].self, from: data)
+                    
+                    guard let albumResult = result["album"] else {
+                        failure?()
+                        return
+                    }
+                    
+                    success?(albumResult)
                 } catch {
                     print(error)
                     failure?()

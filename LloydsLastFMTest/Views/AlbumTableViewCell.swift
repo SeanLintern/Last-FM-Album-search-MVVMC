@@ -14,7 +14,7 @@ class AlbumTableViewCell: UITableViewCell {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.alignment = .top
-        stack.spacing = 4
+        stack.spacing = 8
         return stack
     }()
     

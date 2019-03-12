@@ -19,7 +19,7 @@ class AlbumListCoordinator: Coordinator {
     private func fetchAlbumList(controller: AlbumListViewController) {
         controller.loadingStateUpdated(newState: .loading)
         
-        LastFMAPI.fetchAlbums(searchTerm: "Parachutes", success: {
+        LastFMAPI.fetchAlbums(searchTerm: "Parachutes", success: { result in
             controller.loadingStateUpdated(newState: .loadingComplete)
         }) {
             controller.loadingStateUpdated(newState: .loadingComplete)

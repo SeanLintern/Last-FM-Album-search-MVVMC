@@ -14,6 +14,7 @@
 		7D4D1FD72237D48C0026F44E /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FD62237D48C0026F44E /* LoadingStateView.swift */; };
 		7D4D1FDA2237DEAB0026F44E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FD92237DEAB0026F44E /* Network.swift */; };
 		7D4D1FDC2237DF480026F44E /* LastFMAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FDB2237DF480026F44E /* LastFMAPI.swift */; };
+		7D4D1FDF2237E4DE0026F44E /* LastFMModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FDE2237E4DE0026F44E /* LastFMModels.swift */; };
 		7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456BA2237CA1600239A8A /* AppDelegate.swift */; };
 		7DD456C22237CA1800239A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C12237CA1800239A8A /* Assets.xcassets */; };
 		7DD456C52237CA1800239A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C32237CA1800239A8A /* LaunchScreen.storyboard */; };
@@ -38,6 +39,7 @@
 		7D4D1FD62237D48C0026F44E /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
 		7D4D1FD92237DEAB0026F44E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		7D4D1FDB2237DF480026F44E /* LastFMAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFMAPI.swift; sourceTree = "<group>"; };
+		7D4D1FDE2237E4DE0026F44E /* LastFMModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFMModels.swift; sourceTree = "<group>"; };
 		7DD456B72237CA1600239A8A /* LloydsLastFMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LloydsLastFMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD456BA2237CA1600239A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DD456C12237CA1800239A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		7D4D1FDD2237E4D60026F44E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7D4D1FDE2237E4DE0026F44E /* LastFMModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		7DD456AE2237CA1600239A8A = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		7DD456B92237CA1600239A8A /* LloydsLastFMTest */ = {
 			isa = PBXGroup;
 			children = (
+				7D4D1FDD2237E4D60026F44E /* Models */,
 				7D4D1FD82237DE7A0026F44E /* Network */,
 				7D4D1FD52237D47A0026F44E /* Helpers */,
 				7DD456DF2237CB8300239A8A /* Coordinators */,
@@ -307,6 +318,7 @@
 				7D4D1FCB2237CE2D0026F44E /* AlbumListCoordinator.swift in Sources */,
 				7D4D1FDC2237DF480026F44E /* LastFMAPI.swift in Sources */,
 				7D4D1FD72237D48C0026F44E /* LoadingStateView.swift in Sources */,
+				7D4D1FDF2237E4DE0026F44E /* LastFMModels.swift in Sources */,
 				7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */,
 				7D4D1FDA2237DEAB0026F44E /* Network.swift in Sources */,
 				7D4D1FD02237CF400026F44E /* AlbumListViewController.swift in Sources */,

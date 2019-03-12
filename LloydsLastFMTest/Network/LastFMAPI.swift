@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias LastFMAlbumSearchSuccess = (() -> Void)
+typealias LastFMAlbumSearchSuccess = ((_ result: LastFMAlbumSearchResult) -> Void)
 typealias LastFMAlbumSearchFailure = (() -> Void)
 
 fileprivate enum LastFMEndpoints {
@@ -37,9 +37,24 @@ struct LastFMAPI {
         
         NetworkManager.performRequest(request: request, success: { (data, response) in
             if let data = data {
-                print(try! JSONSerialization.jsonObject(with: data, options: .allowFragments))
+                do {
+                    let decoder = JSONDecoder()
+                    
+                    let result = try decoder.decode([String: LastFMAlbumSearchResult].self, from: data)
+                    
+                    guard let searchResult = result["results"] else {
+                        failure?()
+                        return
+                    }
+                    
+                    success?(searchResult)
+                } catch {
+                    print(error)
+                    failure?()
+                }
+            } else {
+                failure?()
             }
-            success?()
         }) { (type, code, description, data) in
             failure?()
         }

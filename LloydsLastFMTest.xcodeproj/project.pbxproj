@@ -26,10 +26,12 @@
 		7D4D1FF22237FEC10026F44E /* AlbumDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FF12237FEC10026F44E /* AlbumDetailsCoordinator.swift */; };
 		7D4D1FF42237FF3D0026F44E /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FF32237FF3D0026F44E /* AlbumDetailsViewController.swift */; };
 		7D4D1FF922380EB40026F44E /* AlbumDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FF822380EB40026F44E /* AlbumDetailsViewModel.swift */; };
+		7D4D1FFD223833730026F44E /* AlbumDetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FFC223833730026F44E /* AlbumDetailsViewModelTest.swift */; };
+		7D4D1FFF223833B00026F44E /* TestAlbumlistJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D4D1FFE223833B00026F44E /* TestAlbumlistJSON.json */; };
+		7D4D2003223833E10026F44E /* albumDetailsTestJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D4D2002223833E10026F44E /* albumDetailsTestJson.json */; };
 		7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456BA2237CA1600239A8A /* AppDelegate.swift */; };
 		7DD456C22237CA1800239A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C12237CA1800239A8A /* Assets.xcassets */; };
 		7DD456C52237CA1800239A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C32237CA1800239A8A /* LaunchScreen.storyboard */; };
-		7DD456D02237CA1800239A8A /* LloydsLastFMTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456CF2237CA1800239A8A /* LloydsLastFMTestTests.swift */; };
 		7DD456DC2237CA7200239A8A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456DB2237CA7200239A8A /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,13 +64,15 @@
 		7D4D1FF12237FEC10026F44E /* AlbumDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsCoordinator.swift; sourceTree = "<group>"; };
 		7D4D1FF32237FF3D0026F44E /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
 		7D4D1FF822380EB40026F44E /* AlbumDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewModel.swift; sourceTree = "<group>"; };
+		7D4D1FFC223833730026F44E /* AlbumDetailsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewModelTest.swift; sourceTree = "<group>"; };
+		7D4D1FFE223833B00026F44E /* TestAlbumlistJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestAlbumlistJSON.json; sourceTree = "<group>"; };
+		7D4D2002223833E10026F44E /* albumDetailsTestJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = albumDetailsTestJson.json; sourceTree = "<group>"; };
 		7DD456B72237CA1600239A8A /* LloydsLastFMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LloydsLastFMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD456BA2237CA1600239A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DD456C12237CA1800239A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DD456C42237CA1800239A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DD456C62237CA1800239A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DD456CB2237CA1800239A8A /* LloydsLastFMTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LloydsLastFMTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DD456CF2237CA1800239A8A /* LloydsLastFMTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LloydsLastFMTestTests.swift; sourceTree = "<group>"; };
 		7DD456D12237CA1800239A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DD456DB2237CA7200239A8A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7DD456DD2237CB4F00239A8A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -159,7 +163,9 @@
 		7D4D1FEA2237ED720026F44E /* Test Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D4D2002223833E10026F44E /* albumDetailsTestJson.json */,
 				7D4D1FEB2237ED880026F44E /* thumb.jpg */,
+				7D4D1FFE223833B00026F44E /* TestAlbumlistJSON.json */,
 			);
 			path = "Test Files";
 			sourceTree = "<group>";
@@ -201,10 +207,10 @@
 		7DD456CE2237CA1800239A8A /* LloydsLastFMTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				7D4D1FEA2237ED720026F44E /* Test Files */,
 				7D4D1FE82237ECE00026F44E /* Image Loader Tests.swift */,
-				7DD456CF2237CA1800239A8A /* LloydsLastFMTestTests.swift */,
+				7D4D1FFC223833730026F44E /* AlbumDetailsViewModelTest.swift */,
 				7DD456D12237CA1800239A8A /* Info.plist */,
+				7D4D1FEA2237ED720026F44E /* Test Files */,
 			);
 			path = LloydsLastFMTestTests;
 			sourceTree = "<group>";
@@ -322,7 +328,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D4D2003223833E10026F44E /* albumDetailsTestJson.json in Resources */,
 				7D4D1FEC2237ED880026F44E /* thumb.jpg in Resources */,
+				7D4D1FFF223833B00026F44E /* TestAlbumlistJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D4D1FE92237ECE00026F44E /* Image Loader Tests.swift in Sources */,
-				7DD456D02237CA1800239A8A /* LloydsLastFMTestTests.swift in Sources */,
+				7D4D1FFD223833730026F44E /* AlbumDetailsViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

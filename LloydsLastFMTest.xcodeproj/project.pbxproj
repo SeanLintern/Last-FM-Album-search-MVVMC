@@ -58,6 +58,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D4D1FCC2237CF080026F44E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7D4D1FCD2237CF190026F44E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7D4D1FCE2237CF1D0026F44E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		7DD456AE2237CA1600239A8A = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				7DD456DF2237CB8300239A8A /* Coordinators */,
+				7D4D1FCC2237CF080026F44E /* ViewControllers */,
+				7D4D1FCE2237CF1D0026F44E /* ViewModels */,
+				7D4D1FCD2237CF190026F44E /* Views */,
 				7DD456DA2237CA4000239A8A /* Supporting Files */,
 			);
 			path = LloydsLastFMTest;

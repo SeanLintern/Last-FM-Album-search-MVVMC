@@ -31,11 +31,11 @@ struct AlbumListViewModel {
         return NSAttributedString(string: searchResult.albummatches.albums[indexPath.row].artist, attributes: AlbumListViewModel.subtitleAttributes)
     }
     
-    /// Attempts to return a valid image resource of medium size
+    /// Attempts to return a valid image resource of small size
     ///
     /// - Parameter indexPath: IndexPath representing the data point
-    /// - Returns: A potential ImageResource of mediun size
+    /// - Returns: A potential ImageResource of small size
     func imageResource(for indexPath: IndexPath) -> ImageResource? {
-        return searchResult.albummatches.albums[indexPath.row].image.first(where: {$0.size == .medium && $0.text.count > 0})
+        return searchResult.albummatches.albums[indexPath.row].image.first(where: {$0.size == .small && $0.text.count > 0})
     }
 }

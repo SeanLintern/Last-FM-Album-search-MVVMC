@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 protocol AlbumListViewControllerDelegate: class {
-    
+    func albumListDidSearch(controller: AlbumListViewController, searchTerm: String)
 }
 
 class AlbumListViewController: UIViewController {
@@ -26,13 +26,20 @@ class AlbumListViewController: UIViewController {
         return table
     }()
     
+    private lazy var searchBar: UISearchBar = {
+        let bar = UISearchBar(frame: .zero)
+        bar.translatesAutoresizingMaskIntoConstraints = false
+        bar.delegate = self
+        return bar
+    }()
+    
     fileprivate var viewModel: AlbumListViewModel? {
         didSet {
             tableView.reloadData()
         }
     }
     
-    private weak var delegate: AlbumListViewControllerDelegate?
+    fileprivate weak var delegate: AlbumListViewControllerDelegate?
     
     init(delegate: AlbumListViewControllerDelegate) {
         self.delegate = delegate
@@ -64,6 +71,11 @@ class AlbumListViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.tableFooterView = loadingSpinner
+        tableView.tableHeaderView = searchBar
+        
+        searchBar.snp.makeConstraints { (make) in
+            make.width.equalTo(tableView.snp.width)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -107,5 +119,15 @@ extension AlbumListViewController: LoadingStateView {
         case .loadingComplete:
             loadingSpinner.stopAnimating()
         }
+    }
+}
+
+extension AlbumListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let term = searchBar.text, term.count > 0, !term.isEmpty {
+            viewModel = nil
+            delegate?.albumListDidSearch(controller: self, searchTerm: term)
+        }
+        searchBar.resignFirstResponder()
     }
 }

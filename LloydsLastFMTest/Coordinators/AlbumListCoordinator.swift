@@ -13,13 +13,12 @@ class AlbumListCoordinator: Coordinator {
     func start() {
         let controller = AlbumListViewController(delegate: self)
         navigationController.pushViewController(controller, animated: true)
-        fetchAlbumList(controller: controller)
     }
     
-    private func fetchAlbumList(controller: AlbumListViewController) {
+    fileprivate func fetchAlbumList(controller: AlbumListViewController, searchTerm: String) {
         controller.loadingStateUpdated(newState: .loading)
         
-        LastFMAPI.fetchAlbums(searchTerm: "Parachutes", success: { result in
+        LastFMAPI.fetchAlbums(searchTerm: searchTerm, success: { result in
             controller.loadingStateUpdated(newState: .loadingComplete)
             controller.update(viewModel: AlbumListViewModel(searchResult: result))
         }) {
@@ -29,5 +28,7 @@ class AlbumListCoordinator: Coordinator {
 }
 
 extension AlbumListCoordinator: AlbumListViewControllerDelegate {
-    
+    func albumListDidSearch(controller: AlbumListViewController, searchTerm: String) {
+        fetchAlbumList(controller: controller, searchTerm: searchTerm)
+    }
 }

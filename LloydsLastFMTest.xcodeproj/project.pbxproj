@@ -15,6 +15,14 @@
 		7D4D1FDA2237DEAB0026F44E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FD92237DEAB0026F44E /* Network.swift */; };
 		7D4D1FDC2237DF480026F44E /* LastFMAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FDB2237DF480026F44E /* LastFMAPI.swift */; };
 		7D4D1FDF2237E4DE0026F44E /* LastFMModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FDE2237E4DE0026F44E /* LastFMModels.swift */; };
+		7D4D1FE12237E9760026F44E /* AlbumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FE02237E9760026F44E /* AlbumListViewModel.swift */; };
+		7D4D1FE32237EC100026F44E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FE22237EC100026F44E /* ImageLoader.swift */; };
+		7D4D1FE52237EC180026F44E /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FE42237EC180026F44E /* ImageResource.swift */; };
+		7D4D1FE72237EC8D0026F44E /* UIImageView+Lloyds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FE62237EC8D0026F44E /* UIImageView+Lloyds.swift */; };
+		7D4D1FE92237ECE00026F44E /* Image Loader Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FE82237ECE00026F44E /* Image Loader Tests.swift */; };
+		7D4D1FEC2237ED880026F44E /* thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D4D1FEB2237ED880026F44E /* thumb.jpg */; };
+		7D4D1FEE2237EF640026F44E /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FED2237EF640026F44E /* AlbumTableViewCell.swift */; };
+		7D4D1FF02237EFA30026F44E /* UIView+Lloyds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FEF2237EFA30026F44E /* UIView+Lloyds.swift */; };
 		7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456BA2237CA1600239A8A /* AppDelegate.swift */; };
 		7DD456C22237CA1800239A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C12237CA1800239A8A /* Assets.xcassets */; };
 		7DD456C52237CA1800239A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C32237CA1800239A8A /* LaunchScreen.storyboard */; };
@@ -40,6 +48,14 @@
 		7D4D1FD92237DEAB0026F44E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		7D4D1FDB2237DF480026F44E /* LastFMAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFMAPI.swift; sourceTree = "<group>"; };
 		7D4D1FDE2237E4DE0026F44E /* LastFMModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFMModels.swift; sourceTree = "<group>"; };
+		7D4D1FE02237E9760026F44E /* AlbumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModel.swift; sourceTree = "<group>"; };
+		7D4D1FE22237EC100026F44E /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		7D4D1FE42237EC180026F44E /* ImageResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageResource.swift; sourceTree = "<group>"; };
+		7D4D1FE62237EC8D0026F44E /* UIImageView+Lloyds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Lloyds.swift"; sourceTree = "<group>"; };
+		7D4D1FE82237ECE00026F44E /* Image Loader Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image Loader Tests.swift"; sourceTree = "<group>"; };
+		7D4D1FEB2237ED880026F44E /* thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb.jpg; sourceTree = "<group>"; };
+		7D4D1FED2237EF640026F44E /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		7D4D1FEF2237EFA30026F44E /* UIView+Lloyds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Lloyds.swift"; sourceTree = "<group>"; };
 		7DD456B72237CA1600239A8A /* LloydsLastFMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LloydsLastFMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD456BA2237CA1600239A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DD456C12237CA1800239A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +97,7 @@
 		7D4D1FCD2237CF190026F44E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D4D1FED2237EF640026F44E /* AlbumTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -88,6 +105,7 @@
 		7D4D1FCE2237CF1D0026F44E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7D4D1FE02237E9760026F44E /* AlbumListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -103,7 +121,10 @@
 		7D4D1FD52237D47A0026F44E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7D4D1FEF2237EFA30026F44E /* UIView+Lloyds.swift */,
+				7D4D1FE22237EC100026F44E /* ImageLoader.swift */,
 				7D4D1FD62237D48C0026F44E /* LoadingStateView.swift */,
+				7D4D1FE62237EC8D0026F44E /* UIImageView+Lloyds.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -120,9 +141,18 @@
 		7D4D1FDD2237E4D60026F44E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7D4D1FE42237EC180026F44E /* ImageResource.swift */,
 				7D4D1FDE2237E4DE0026F44E /* LastFMModels.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7D4D1FEA2237ED720026F44E /* Test Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D4D1FEB2237ED880026F44E /* thumb.jpg */,
+			);
+			path = "Test Files";
 			sourceTree = "<group>";
 		};
 		7DD456AE2237CA1600239A8A = {
@@ -163,6 +193,8 @@
 		7DD456CE2237CA1800239A8A /* LloydsLastFMTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				7D4D1FEA2237ED720026F44E /* Test Files */,
+				7D4D1FE82237ECE00026F44E /* Image Loader Tests.swift */,
 				7DD456CF2237CA1800239A8A /* LloydsLastFMTestTests.swift */,
 				7DD456D12237CA1800239A8A /* Info.plist */,
 			);
@@ -281,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D4D1FEC2237ED880026F44E /* thumb.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,12 +347,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D4D1FC92237CC570026F44E /* AppCoordinator.swift in Sources */,
+				7D4D1FE52237EC180026F44E /* ImageResource.swift in Sources */,
+				7D4D1FE72237EC8D0026F44E /* UIImageView+Lloyds.swift in Sources */,
+				7D4D1FF02237EFA30026F44E /* UIView+Lloyds.swift in Sources */,
 				7DD456DC2237CA7200239A8A /* Coordinator.swift in Sources */,
 				7D4D1FCB2237CE2D0026F44E /* AlbumListCoordinator.swift in Sources */,
 				7D4D1FDC2237DF480026F44E /* LastFMAPI.swift in Sources */,
+				7D4D1FE12237E9760026F44E /* AlbumListViewModel.swift in Sources */,
+				7D4D1FE32237EC100026F44E /* ImageLoader.swift in Sources */,
 				7D4D1FD72237D48C0026F44E /* LoadingStateView.swift in Sources */,
 				7D4D1FDF2237E4DE0026F44E /* LastFMModels.swift in Sources */,
 				7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */,
+				7D4D1FEE2237EF640026F44E /* AlbumTableViewCell.swift in Sources */,
 				7D4D1FDA2237DEAB0026F44E /* Network.swift in Sources */,
 				7D4D1FD02237CF400026F44E /* AlbumListViewController.swift in Sources */,
 			);
@@ -329,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D4D1FE92237ECE00026F44E /* Image Loader Tests.swift in Sources */,
 				7DD456D02237CA1800239A8A /* LloydsLastFMTestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

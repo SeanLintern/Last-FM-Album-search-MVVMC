@@ -26,6 +26,12 @@ class AlbumListViewController: UIViewController {
         return table
     }()
     
+    fileprivate var viewModel: AlbumListViewModel? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     private weak var delegate: AlbumListViewControllerDelegate?
     
     init(delegate: AlbumListViewControllerDelegate) {
@@ -42,6 +48,8 @@ class AlbumListViewController: UIViewController {
         
         navigationItem.title = "Albums"
         
+        tableView.registerClasses(classes: [AlbumTableViewCell.self])
+        
         view.addSubview(loadingSpinner)
         loadingSpinner.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
@@ -57,19 +65,29 @@ class AlbumListViewController: UIViewController {
         
         tableView.tableFooterView = loadingSpinner
     }
+    
+    func update(viewModel: AlbumListViewModel) {
+        self.viewModel = viewModel
+    }
 }
 
 extension AlbumListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel?.numberOfItems ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: AlbumTableViewCell = tableView.dequeueCell(atIndexPath: indexPath)
+        
+        if let model = viewModel {
+            cell.configure(title: model.title(for: indexPath), subtitle: model.subtitle(for: indexPath), imageResource: model.imageResource(for: indexPath))
+        }
+        
+        return cell
     }
 }
 

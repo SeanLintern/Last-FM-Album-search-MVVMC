@@ -21,6 +21,7 @@ class AlbumListCoordinator: Coordinator {
         
         LastFMAPI.fetchAlbums(searchTerm: "Parachutes", success: { result in
             controller.loadingStateUpdated(newState: .loadingComplete)
+            controller.update(viewModel: AlbumListViewModel(searchResult: result))
         }) {
             controller.loadingStateUpdated(newState: .loadingComplete)
         }

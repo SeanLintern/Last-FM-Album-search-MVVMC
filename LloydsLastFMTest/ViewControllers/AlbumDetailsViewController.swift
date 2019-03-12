@@ -10,6 +10,12 @@ import UIKit
 
 class AlbumDetailsViewController: UIViewController {
 
+    fileprivate lazy var loadingSpinner: UIActivityIndicatorView = {
+        let loader = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        loader.hidesWhenStopped = true
+        return loader
+    }()
+    
     private lazy var verticalTextStackLayout: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -41,10 +47,9 @@ class AlbumDetailsViewController: UIViewController {
         return imageView
     }()
     
-    fileprivate var viewModel: AlbumDetailsViewModel
+    fileprivate var viewModel: AlbumDetailsViewModel?
     
-    init(viewModel: AlbumDetailsViewModel) {
-        self.viewModel = viewModel
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -57,6 +62,13 @@ class AlbumDetailsViewController: UIViewController {
 
         view.backgroundColor = .white
         
+        view.addSubview(loadingSpinner)
+        loadingSpinner.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
+    }
+    
+    private func updateUI(viewModel: AlbumDetailsViewModel) {
         navigationItem.title = viewModel.title.string
         
         view.addSubview(verticalTextStackLayout)
@@ -78,9 +90,9 @@ class AlbumDetailsViewController: UIViewController {
         textStack.axis = .vertical
         textStack.addArrangedSubview(titleLabel)
         textStack.addArrangedSubview(subtitleLabel)
-
+        
         verticalTextStackLayout.addArrangedSubview(textStack)
-
+        
         titleLabel.attributedText = viewModel.title
         subtitleLabel.attributedText = viewModel.subtitle
         
@@ -89,3 +101,15 @@ class AlbumDetailsViewController: UIViewController {
         }
     }
 }
+
+extension AlbumDetailsViewController: LoadingStateView {
+    func loadingStateUpdated(newState: LoadingState) {
+        switch newState {
+        case .loading:
+            loadingSpinner.startAnimating()
+        case .loadingComplete:
+            loadingSpinner.stopAnimating()
+        }
+    }
+}
+

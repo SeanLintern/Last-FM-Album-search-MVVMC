@@ -31,6 +31,7 @@ struct LastFMAlbum: Codable {
     let url: URL
     let image: [LastFMImage]
     let streamable: String
+    let mbid: String
 }
 
 struct LastFMAlbumSearchResult: Codable {

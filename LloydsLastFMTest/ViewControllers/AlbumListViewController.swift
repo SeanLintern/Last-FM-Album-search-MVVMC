@@ -58,11 +58,6 @@ class AlbumListViewController: UIViewController {
         
         tableView.registerClasses(classes: [AlbumTableViewCell.self])
         
-        view.addSubview(loadingSpinner)
-        loadingSpinner.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-        }
-        
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()

@@ -22,7 +22,7 @@ struct AlbumDetailsViewModel {
     }
     
     var image: ImageResource? {
-        return album.image.filter({$0.size == .large}).first
+        return album.image.filter({$0.size == .extralarge}).first
     }
 
     private var album: LastFMAlbum

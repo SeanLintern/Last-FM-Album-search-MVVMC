@@ -9,15 +9,20 @@
 import UIKit
 
 typealias LastFMAlbumSearchSuccess = ((_ result: LastFMAlbumSearchResult) -> Void)
+typealias LastFMAlbumDetailsSuccess = ((_ result: LastFMAlbumSearchResult) -> Void)
+
 typealias LastFMAlbumSearchFailure = (() -> Void)
 
 fileprivate enum LastFMEndpoints {
     case albumSearch(searchTerm: String, apiKey: String)
+    case albumDetails(mbid: String, apiKey: String)
     
     var path: String {
         switch self {
         case .albumSearch(let searchTerm, let apiKey):
             return "?method=album.search&album=\(searchTerm)&api_key=\(apiKey)&format=json"
+        case .albumDetails(let mbid, let apiKey):
+            return "?method=album.getinfo&mbid=\(mbid)&api_key=\(apiKey)&format=json"
         }
     }
 }
@@ -58,5 +63,30 @@ struct LastFMAPI {
         }) { (type, code, description, data) in
             failure?()
         }
+    }
+    
+    static func fetchAlbumDetails(mbid: String, success: LastFMAlbumDetailsSuccess?, failure: LastFMAlbumSearchFailure?) {
+        guard let url = URL(string: LastFMAPI.basePath + LastFMEndpoints.albumDetails(mbid: mbid, apiKey: LastFMAPI.APIKey).path) else {
+            failure?()
+            return
+        }
+        
+        let request = NetworkManager.createRequest(url: url, additionalHeaders: nil, type: .get, body: nil)
+        
+        NetworkManager.performRequest(request: request, success: { (data, response) in
+            if let data = data {
+                do {
+                    print(try JSONSerialization.jsonObject(with: data, options: .allowFragments))
+                } catch {
+                    print(error)
+                    failure?()
+                }
+            } else {
+                failure?()
+            }
+        }) { (type, code, description, data) in
+            failure?()
+        }
+
     }
 }

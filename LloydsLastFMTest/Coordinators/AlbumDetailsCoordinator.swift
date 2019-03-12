@@ -11,6 +11,7 @@ import UIKit
 class AlbumDetailsCoordinator: Coordinator {
 
     func start(album: LastFMAlbum) {
-        
+        let controller = AlbumDetailsViewController(viewModel: AlbumDetailsViewModel(album: album))
+        navigationController.pushViewController(controller, animated: true)
     }
 }

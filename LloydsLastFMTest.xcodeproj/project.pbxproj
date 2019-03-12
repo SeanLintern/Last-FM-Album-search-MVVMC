@@ -25,6 +25,7 @@
 		7D4D1FF02237EFA30026F44E /* UIView+Lloyds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FEF2237EFA30026F44E /* UIView+Lloyds.swift */; };
 		7D4D1FF22237FEC10026F44E /* AlbumDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FF12237FEC10026F44E /* AlbumDetailsCoordinator.swift */; };
 		7D4D1FF42237FF3D0026F44E /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FF32237FF3D0026F44E /* AlbumDetailsViewController.swift */; };
+		7D4D1FF922380EB40026F44E /* AlbumDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FF822380EB40026F44E /* AlbumDetailsViewModel.swift */; };
 		7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456BA2237CA1600239A8A /* AppDelegate.swift */; };
 		7DD456C22237CA1800239A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C12237CA1800239A8A /* Assets.xcassets */; };
 		7DD456C52237CA1800239A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C32237CA1800239A8A /* LaunchScreen.storyboard */; };
@@ -60,6 +61,7 @@
 		7D4D1FEF2237EFA30026F44E /* UIView+Lloyds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Lloyds.swift"; sourceTree = "<group>"; };
 		7D4D1FF12237FEC10026F44E /* AlbumDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsCoordinator.swift; sourceTree = "<group>"; };
 		7D4D1FF32237FF3D0026F44E /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
+		7D4D1FF822380EB40026F44E /* AlbumDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewModel.swift; sourceTree = "<group>"; };
 		7DD456B72237CA1600239A8A /* LloydsLastFMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LloydsLastFMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD456BA2237CA1600239A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DD456C12237CA1800239A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		7D4D1FCC2237CF080026F44E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7D4D1FCF2237CF400026F44E /* AlbumListViewController.swift */,
 				7D4D1FF32237FF3D0026F44E /* AlbumDetailsViewController.swift */,
 			);
 			path = ViewControllers;
@@ -111,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4D1FE02237E9760026F44E /* AlbumListViewModel.swift */,
+				7D4D1FF822380EB40026F44E /* AlbumDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -186,7 +190,6 @@
 				7D4D1FD52237D47A0026F44E /* Helpers */,
 				7DD456DF2237CB8300239A8A /* Coordinators */,
 				7D4D1FCC2237CF080026F44E /* ViewControllers */,
-				7D4D1FCF2237CF400026F44E /* AlbumListViewController.swift */,
 				7D4D1FCE2237CF1D0026F44E /* ViewModels */,
 				7D4D1FCD2237CF190026F44E /* Views */,
 				7DD456DA2237CA4000239A8A /* Supporting Files */,
@@ -353,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D4D1FC92237CC570026F44E /* AppCoordinator.swift in Sources */,
+				7D4D1FF922380EB40026F44E /* AlbumDetailsViewModel.swift in Sources */,
 				7D4D1FE52237EC180026F44E /* ImageResource.swift in Sources */,
 				7D4D1FE72237EC8D0026F44E /* UIImageView+Lloyds.swift in Sources */,
 				7D4D1FF22237FEC10026F44E /* AlbumDetailsCoordinator.swift in Sources */,

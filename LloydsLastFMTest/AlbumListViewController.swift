@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol AlbumListViewControllerDelegate: class {
     
@@ -28,6 +29,6 @@ class AlbumListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        
     }
 }

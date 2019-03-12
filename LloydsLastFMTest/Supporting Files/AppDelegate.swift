@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appCoordinator = AppCoordinator(launchOptions: launchOptions, navigationController: navigation)
         
         window?.rootViewController = navigation
-        
+                
         return true
     }
 }

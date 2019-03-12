@@ -11,6 +11,7 @@ import SnapKit
 
 protocol AlbumListViewControllerDelegate: class {
     func albumListDidSearch(controller: AlbumListViewController, searchTerm: String)
+    func albumListDidSelectAlbum(controller: AlbumListViewController, album: LastFMAlbum)
 }
 
 class AlbumListViewController: UIViewController {
@@ -108,6 +109,12 @@ extension AlbumListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let album = viewModel?.album(for: indexPath) {
+            delegate?.albumListDidSelectAlbum(controller: self, album: album)
+        }
     }
 }
 

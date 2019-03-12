@@ -23,6 +23,8 @@
 		7D4D1FEC2237ED880026F44E /* thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D4D1FEB2237ED880026F44E /* thumb.jpg */; };
 		7D4D1FEE2237EF640026F44E /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FED2237EF640026F44E /* AlbumTableViewCell.swift */; };
 		7D4D1FF02237EFA30026F44E /* UIView+Lloyds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FEF2237EFA30026F44E /* UIView+Lloyds.swift */; };
+		7D4D1FF22237FEC10026F44E /* AlbumDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FF12237FEC10026F44E /* AlbumDetailsCoordinator.swift */; };
+		7D4D1FF42237FF3D0026F44E /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FF32237FF3D0026F44E /* AlbumDetailsViewController.swift */; };
 		7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456BA2237CA1600239A8A /* AppDelegate.swift */; };
 		7DD456C22237CA1800239A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C12237CA1800239A8A /* Assets.xcassets */; };
 		7DD456C52237CA1800239A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C32237CA1800239A8A /* LaunchScreen.storyboard */; };
@@ -56,6 +58,8 @@
 		7D4D1FEB2237ED880026F44E /* thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb.jpg; sourceTree = "<group>"; };
 		7D4D1FED2237EF640026F44E /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		7D4D1FEF2237EFA30026F44E /* UIView+Lloyds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Lloyds.swift"; sourceTree = "<group>"; };
+		7D4D1FF12237FEC10026F44E /* AlbumDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsCoordinator.swift; sourceTree = "<group>"; };
+		7D4D1FF32237FF3D0026F44E /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
 		7DD456B72237CA1600239A8A /* LloydsLastFMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LloydsLastFMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD456BA2237CA1600239A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DD456C12237CA1800239A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		7D4D1FCC2237CF080026F44E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7D4D1FF32237FF3D0026F44E /* AlbumDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				7DD456DB2237CA7200239A8A /* Coordinator.swift */,
 				7DD456DD2237CB4F00239A8A /* AppCoordinator.swift */,
 				7D4D1FCA2237CE2D0026F44E /* AlbumListCoordinator.swift */,
+				7D4D1FF12237FEC10026F44E /* AlbumDetailsCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 				7D4D1FC92237CC570026F44E /* AppCoordinator.swift in Sources */,
 				7D4D1FE52237EC180026F44E /* ImageResource.swift in Sources */,
 				7D4D1FE72237EC8D0026F44E /* UIImageView+Lloyds.swift in Sources */,
+				7D4D1FF22237FEC10026F44E /* AlbumDetailsCoordinator.swift in Sources */,
 				7D4D1FF02237EFA30026F44E /* UIView+Lloyds.swift in Sources */,
 				7DD456DC2237CA7200239A8A /* Coordinator.swift in Sources */,
 				7D4D1FCB2237CE2D0026F44E /* AlbumListCoordinator.swift in Sources */,
@@ -358,6 +365,7 @@
 				7D4D1FD72237D48C0026F44E /* LoadingStateView.swift in Sources */,
 				7D4D1FDF2237E4DE0026F44E /* LastFMModels.swift in Sources */,
 				7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */,
+				7D4D1FF42237FF3D0026F44E /* AlbumDetailsViewController.swift in Sources */,
 				7D4D1FEE2237EF640026F44E /* AlbumTableViewCell.swift in Sources */,
 				7D4D1FDA2237DEAB0026F44E /* Network.swift in Sources */,
 				7D4D1FD02237CF400026F44E /* AlbumListViewController.swift in Sources */,

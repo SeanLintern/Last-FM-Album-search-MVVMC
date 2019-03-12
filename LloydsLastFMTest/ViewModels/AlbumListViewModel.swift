@@ -38,4 +38,8 @@ struct AlbumListViewModel {
     func imageResource(for indexPath: IndexPath) -> ImageResource? {
         return searchResult.albummatches.albums[indexPath.row].image.first(where: {$0.size == .small && $0.text.count > 0})
     }
+    
+    func album(for indexPath: IndexPath) -> LastFMAlbum {
+        return searchResult.albummatches.albums[indexPath.row]
+    }
 }

@@ -28,6 +28,12 @@ class AlbumListCoordinator: Coordinator {
 }
 
 extension AlbumListCoordinator: AlbumListViewControllerDelegate {
+    func albumListDidSelectAlbum(controller: AlbumListViewController, album: LastFMAlbum) {
+        let coordinator = AlbumDetailsCoordinator(navigationController: navigationController)
+        addChild(coordinator: coordinator)
+        coordinator.start(album: album)
+    }
+    
     func albumListDidSearch(controller: AlbumListViewController, searchTerm: String) {
         fetchAlbumList(controller: controller, searchTerm: searchTerm)
     }

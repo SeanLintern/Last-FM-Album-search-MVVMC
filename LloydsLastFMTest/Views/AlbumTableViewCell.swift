@@ -82,7 +82,7 @@ class AlbumTableViewCell: UITableViewCell {
         horizontalStackLayout.addArrangedSubview(displayImage)
         
         displayImage.snp.makeConstraints { (make) in
-            make.size.equalTo(50)
+            make.size.equalTo(50).priority(999)
         }
     
         horizontalStackLayout.addArrangedSubview(verticalTextStackLayout)
@@ -103,5 +103,6 @@ class AlbumTableViewCell: UITableViewCell {
         subtitleLabel.isHidden = subtitle == nil
         
         self.imageResource = imageResource
+        self.displayImage.isHidden = imageResource == nil
     }
 }

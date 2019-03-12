@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D4D1FC92237CC570026F44E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456DD2237CB4F00239A8A /* AppCoordinator.swift */; };
+		7D4D1FCB2237CE2D0026F44E /* AlbumListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FCA2237CE2D0026F44E /* AlbumListCoordinator.swift */; };
 		7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456BA2237CA1600239A8A /* AppDelegate.swift */; };
 		7DD456C22237CA1800239A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C12237CA1800239A8A /* Assets.xcassets */; };
 		7DD456C52237CA1800239A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C32237CA1800239A8A /* LaunchScreen.storyboard */; };
 		7DD456D02237CA1800239A8A /* LloydsLastFMTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456CF2237CA1800239A8A /* LloydsLastFMTestTests.swift */; };
+		7DD456DC2237CA7200239A8A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456DB2237CA7200239A8A /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D4D1FCA2237CE2D0026F44E /* AlbumListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListCoordinator.swift; sourceTree = "<group>"; };
 		7DD456B72237CA1600239A8A /* LloydsLastFMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LloydsLastFMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD456BA2237CA1600239A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DD456C12237CA1800239A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		7DD456CB2237CA1800239A8A /* LloydsLastFMTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LloydsLastFMTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD456CF2237CA1800239A8A /* LloydsLastFMTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LloydsLastFMTestTests.swift; sourceTree = "<group>"; };
 		7DD456D12237CA1800239A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DD456DB2237CA7200239A8A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		7DD456DD2237CB4F00239A8A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 		7DD456B92237CA1600239A8A /* LloydsLastFMTest */ = {
 			isa = PBXGroup;
 			children = (
+				7DD456DF2237CB8300239A8A /* Coordinators */,
 				7DD456DA2237CA4000239A8A /* Supporting Files */,
 			);
 			path = LloydsLastFMTest;
@@ -96,6 +103,16 @@
 				7DD456C62237CA1800239A8A /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DD456DF2237CB8300239A8A /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				7DD456DB2237CA7200239A8A /* Coordinator.swift */,
+				7DD456DD2237CB4F00239A8A /* AppCoordinator.swift */,
+				7D4D1FCA2237CE2D0026F44E /* AlbumListCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D4D1FC92237CC570026F44E /* AppCoordinator.swift in Sources */,
+				7DD456DC2237CA7200239A8A /* Coordinator.swift in Sources */,
+				7D4D1FCB2237CE2D0026F44E /* AlbumListCoordinator.swift in Sources */,
 				7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,14 +374,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54GJ3Q9TK8;
-				INFOPLIST_FILE = LloydsLastFMTest/Info.plist;
+				INFOPLIST_FILE = "LloydsLastFMTest/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sean.lintern.LloydsLastFMTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -372,14 +392,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54GJ3Q9TK8;
-				INFOPLIST_FILE = LloydsLastFMTest/Info.plist;
+				INFOPLIST_FILE = "LloydsLastFMTest/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sean.lintern.LloydsLastFMTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

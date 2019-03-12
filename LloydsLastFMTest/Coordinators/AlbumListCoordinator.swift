@@ -18,6 +18,12 @@ class AlbumListCoordinator: Coordinator {
     
     private func fetchAlbumList(controller: AlbumListViewController) {
         controller.loadingStateUpdated(newState: .loading)
+        
+        LastFMAPI.fetchAlbums(success: {
+            controller.loadingStateUpdated(newState: .loadingComplete)
+        }) {
+            controller.loadingStateUpdated(newState: .loadingComplete)
+        }
     }
 }
 

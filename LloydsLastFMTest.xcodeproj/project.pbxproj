@@ -13,6 +13,7 @@
 		7D4D1FD32237D17B0026F44E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4D1FD22237D17B0026F44E /* SnapKit.framework */; };
 		7D4D1FD72237D48C0026F44E /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FD62237D48C0026F44E /* LoadingStateView.swift */; };
 		7D4D1FDA2237DEAB0026F44E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FD92237DEAB0026F44E /* Network.swift */; };
+		7D4D1FDC2237DF480026F44E /* LastFMAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D1FDB2237DF480026F44E /* LastFMAPI.swift */; };
 		7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD456BA2237CA1600239A8A /* AppDelegate.swift */; };
 		7DD456C22237CA1800239A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C12237CA1800239A8A /* Assets.xcassets */; };
 		7DD456C52237CA1800239A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD456C32237CA1800239A8A /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 		7D4D1FD22237D17B0026F44E /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
 		7D4D1FD62237D48C0026F44E /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
 		7D4D1FD92237DEAB0026F44E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		7D4D1FDB2237DF480026F44E /* LastFMAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFMAPI.swift; sourceTree = "<group>"; };
 		7DD456B72237CA1600239A8A /* LloydsLastFMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LloydsLastFMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD456BA2237CA1600239A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DD456C12237CA1800239A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4D1FD92237DEAB0026F44E /* Network.swift */,
+				7D4D1FDB2237DF480026F44E /* LastFMAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				7D4D1FC92237CC570026F44E /* AppCoordinator.swift in Sources */,
 				7DD456DC2237CA7200239A8A /* Coordinator.swift in Sources */,
 				7D4D1FCB2237CE2D0026F44E /* AlbumListCoordinator.swift in Sources */,
+				7D4D1FDC2237DF480026F44E /* LastFMAPI.swift in Sources */,
 				7D4D1FD72237D48C0026F44E /* LoadingStateView.swift in Sources */,
 				7DD456BB2237CA1600239A8A /* AppDelegate.swift in Sources */,
 				7D4D1FDA2237DEAB0026F44E /* Network.swift in Sources */,

@@ -9,9 +9,10 @@
 import UIKit
 
 extension UIImageView {
-    func loadImage(resource: ImageResource) {
+    func loadImage(resource: ImageResource, completion: (() -> Void)? = nil) {
         ImageLoader.shared.request(resource: resource) { [weak self] (image) in
             self?.image = image
+            completion?()
         }
     }
 }

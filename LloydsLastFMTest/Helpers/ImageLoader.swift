@@ -29,6 +29,10 @@ private class ImageLoadingRequestOperation: Operation {
         return completed
     }
     
+    override var isCancelled: Bool {
+        return completed
+    }
+    
     /// Prevents the operation reporting as completed through super methods
     /// before the async operation is actually complete.
     private var completed: Bool = false
@@ -41,6 +45,12 @@ private class ImageLoadingRequestOperation: Operation {
     
     override func start() {
         super.start()
+        
+        guard !isCancelled else {
+            completion?(nil, resource)
+            completed = true
+            return
+        }
         
         session.dataTask(with: resource.resourceURL) { [weak self] (data, _, _) in
             self?.complete(data: data)
@@ -62,6 +72,11 @@ private class ImageLoadingRequestOperation: Operation {
         
         completion?(UIImage(data: imageData), resource)
         completed = true
+    }
+    
+    override func cancel() {
+        complete(data: nil)
+        super.cancel()
     }
 }
 
@@ -117,6 +132,8 @@ class ImageLoader {
                 request?(image)
             }
         }
+        
+        requestStore[resource.identifier] = nil
         
         guard let verifiedImage = image else { return }
         
